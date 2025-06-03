@@ -21,6 +21,257 @@
   </head>
 
   <body>
-    <p>Projek Automasi</p>
+    <nav>
+      <img
+        class="logo"
+        src="assets/LOGO.png"
+        alt="Logo FILKOMreserV"
+        onclick="location.reload();"
+        onclick="window.location.href='/page/login.html'"
+      />
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav__links">
+        <li class="link"><a href="index.html">Beranda</a></li>
+        <li class="link"><a href="#booklet">Buku Panduan</a></li>
+        <li class="link"><a href="#footer">Kontak Kami</a></li>
+        <li class="link">
+          <a href="/page/notifikasi.html" style="display: flex; align-items: center">
+            <i
+              class="ri-notification-3-line"
+              style="font-size: 1.5rem; margin-right: 5px"
+            ></i>
+            Notifikasi
+          </a>
+        </li>
+        <button
+          id="authButton"
+          class="btn"
+          style="color: var(--white); background-color: var(--primary-color)"
+        >
+          Login
+        </button>
+      </ul>
+    </nav>
+    <header class="section__container header__container">
+      <div class="header__image__container">
+        <div class="header__content">
+          <h1>Atur Peminjaman Ruangan dengan Mudah</h1>
+          <p>
+            Reservasi ruangan di FILKOM UB secara cepat, efisien, dan
+            terorganisir dengan FILKOMreserV.
+          </p>
+        </div>
+        <div class="booking__container">
+          <form onsubmit="return false;">
+            <!-- Menggunakan onsubmit untuk mencegah reload halaman -->
+            <div class="form__group">
+              <div class="input__group">
+                <input type="date" id="date-picker" />
+                <label>Tanggal Peminjaman</label>
+              </div>
+              <p>Pilih tanggal peminjaman</p>
+            </div>
+            <div class="form__group">
+              <div class="input__group">
+                <input type="time" id="start-time-picker" />
+                <label>Waktu Mulai</label>
+              </div>
+              <p>Pilih waktu mulai peminjaman</p>
+            </div>
+            <div class="form__group">
+              <div class="input__group">
+                <input type="time" id="end-time-picker" />
+                <label>Waktu Selesai</label>
+              </div>
+              <p>Pilih waktu selesai peminjaman</p>
+            </div>
+            <div class="form__group">
+              <div class="input__group">
+                <input type="number" id="capacity" min="1" />
+                <label>Kapasitas</label>
+              </div>
+              <p>Tentukan jumlah orang</p>
+            </div>
+          </form>
+          <button class="btn">
+            <i class="ri-search-line" onclick="searchRooms()"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+  
+
+    <section class="section__container popular__container">
+      <p></p>
+      <h2 class="section__header">Ruangan yang tersedia di FILKOM</h2>
+      <div class="popular__grid">
+        <div class="popular__card">
+          <img class="gkm1" src="assets/gkm1.jpg" alt="Ruangan GKM" />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>GKM</h4>
+              <h4>100 Orang</h4>
+            </div>
+            <div class="popular__description">
+              <p>Gedung Kreativitas Bersama FILKOM UB</p>
+              <a href="informasi.html">
+                <p class="lebih__lanjut">Detail</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="popular__card">
+          <img
+            class="g2"
+            src="assets/adver.webp"
+            alt="Ruangan Algoritma G2"
+          />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>Auditorium Algoritma G2</h4>
+              <h4>300+ Orang</h4>
+            </div>
+            <div class="popular__description">
+              <p>Gedung G2 FILKOM UB</p>
+              <a href="informasi.html">
+                <p class="lebih__lanjut">Detail</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="popular__card">
+          <img
+            class="gedungf"
+            src="assets/gedungfkelas1.jpg"
+            alt="Ruangan Gedung F"
+          />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>Gedung F</h4>
+              <h4>40 Orang</h4>
+            </div>
+            <div class="popular__description">
+              <p>Ruang Kelas Gedung F FILKOM UB</p>
+              <a href="informasi.html">
+                <p class="lebih__lanjut">Detail</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="popular__card">
+          <img class="heru" src="assets/heru.webp" alt="Ruangan Heuristik" />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>Heuristik</h4>
+              <h4>120 Orang</h4>
+            </div>
+            <div class="popular__description">
+              <p>Gedung A FILKOM UB</p>
+              <a href="informasi.html">
+                <p class="lebih__lanjut">Detail</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="client">
+      <div class="section__container client__container">
+        <h2 class="section__header">Testimoni Pengguna</h2>
+        <div class="client__grid">
+          <div class="client__card">
+            <img src="assets/client-1.jpg" alt="Client 1" />
+            <p>
+              Proses peminjaman sangat cepat, dan notifikasi diterima instan.
+              FILKOMreserV membuat segalanya lebih mudah!
+            </p>
+          </div>
+          <div class="client__card">
+            <img src="assets/client-2.jpg" alt="Client 2" />
+            <p>
+              Saya dapat melihat ketersediaan ruangan secara detail, termasuk
+              fasilitasnya. Sangat membantu untuk kegiatan saya.
+            </p>
+          </div>
+          <div class="client__card">
+            <img src="assets/client-3.jpg" alt="Client 3" />
+            <p>
+              Peminjaman ruangan selesai dalam beberapa menit. Sistem ini sangat
+              efisien!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container" id="booklet">
+      <div class="reward__container">
+        <p style="font-size: 30px; font-weight: bold">Buku Panduan</p>
+        <h4>Buku panduan untuk memahami alur peminjaman ruangan di FILKOM.</h4>
+        <a
+          href="https://drive.google.com/file/d/1p_tvT4LuMu7fshY09A8rpIGc8lM1mUZo/view?usp=sharing"
+          ><button class="reward__btn">Klik di sini</button></a
+        >
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h3>FILKOMreserV</h3>
+          <p>
+            Sistem yang memudahkan mahasiswa dan dosen untuk memesan ruangan di
+            Fakultas Ilmu Komputer.
+          </p>
+          <p>
+            Kemudahan akses, efisiensi waktu, dan transparansi adalah fokus
+            utama kami.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Informasi Kontak</h4>
+          <p>
+            Jl. Veteran, Ketawanggede, Lowokwaru, Kota Malang, Jawa Timur,
+            Indonesia - 65145
+          </p>
+          <p>filkom@ub.ac.id</p>
+          <p>+ 01 234 567 88</p>
+          <p>+ 01 234 567 89</p>
+        </div>
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <p>FAQ</p>
+          <p>Syarat & Ketentuan</p>
+          <p>Kebijakan Privasi</p>
+        </div>
+      </div>
+      <div class="footer__bar">Copyright © 2024 FILKOMreserV.</div>
+      <a href="#top" class="scroll-to-top" aria-label="Scroll to top">
+        <i class="ri-arrow-up-s-line"></i>
+      </a>
+      <script>
+        // Menampilkan tombol ketika halaman di-scroll ke bawah
+        const scrollToTopButton = document.querySelector(".scroll-to-top");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 1500) {
+            // Jika sudah di-scroll lebih dari 200px
+            scrollToTopButton.style.display = "flex";
+          } else {
+            scrollToTopButton.style.display = "none";
+          }
+        });
+      </script>
+    </footer>
+   
   </body>
 </html>
